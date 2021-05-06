@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!define CLASSCOMMENT(x) <color:white>x</color>
+!define COMMENT(x) <color:blue>x</color>
+
+ interface TVState {
+    setOn(TV tv)
+    setOff(TV tv)
+    kickHard(TV tv)
+    showState();
+}
+
+ class TVStateOff {
+    setOn(TV tv);  COMMENT(tv.setState(new TVStateOn()); )
+    setOff(TV tv);  COMMENT(No state change);
+    kickHard(TV tv)   COMMENT(tv.setState(new TVStateBroken()););
+    showState();  COMMENT("Writes:TV is turned OFF");
+}
+
+ class TVStateOn {
+    setOn(TV tv);  COMMENT(No state change);
+    setOff(TV tv);  COMMENT(tv.setState(new TVStateOff()); )
+    kickHard(TV tv)   COMMENT(tv.setState(new TVStateBroken()););
+    showState();  COMMENT("Writes:TV is turned ON");
+}
+
+ class TVStateBroken {
+    setOn(TV tv);  COMMENT(No state change);
+    setOff(TV tv);  COMMENT(No state change);
+    kickHard(TV tv)   COMMENT(No state change);
+    showState();  COMMENT("Writes:TV is broken");
+}
+
+ class TV {
+    TVState state
+     setState(TVState state) COMMENT(this.state=state)
+    setOn();   COMMENT(state.setOn(this);)
+    setOff();  COMMENT(state.setOff(this);)
+    kickHard();  COMMENT(state.kickHard(this);)
+    showState();
+}
+
+TVState <|-- TVStateOn
+TVState <|-- TVStateOff
+TVState <|-- TVStateBroken
+
+@enduml

@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+!define CLASSCOMMENT(x) <color:white>x</color>
+!define COMMENT(x) <color:blue>x</color>
+
+ class Bus {
+    BusState state
+    int tStop, pos;
+    update();  COMMENT(Updates states dep on state)
+    setState(BusState state) COMMENT(this.state=state)
+    acc();   COMMENT(state.acc(this);)
+    drive();  COMMENT(state.drive(this);)
+    stop();  COMMENT(state.stop(this);)
+    getStateAsString();
+}
+
+
+ interface BusState {
+    acc(Bus bus)
+    drive(Bus bus)
+    stop(Bus bus)
+    getStateAsString();
+}
+
+ class Waiting {
+    acc(Bus bus);  COMMENT(bus.setState(new Acc()); )
+    drive(Bus bus);  COMMENT(No state change);
+    stop(Bus bus)   COMMENT(No state change);
+}
+
+ class Acc {
+    acc(Bus bus);  COMMENT(No state change);
+    drive(Bus bus);  COMMENT(bus.setState(new BusStateMoving()); );
+    stop(Bus bus)   COMMENT(No state change);
+}
+
+ class Moving {
+    acc(Bus bus);  COMMENT(No state change);
+    drive(Bus bus);  COMMENT(No state change);
+    stop(Bus bus)   COMMENT(bus.setState(new Waiting()); )
+}
+
+
+BusState <|-- Waiting
+BusState <|-- Acc
+BusState <|-- Moving
+
+@enduml

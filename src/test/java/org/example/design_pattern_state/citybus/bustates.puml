@@ -1,0 +1,13 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+[*] -> Waiting
+
+Waiting -> Acc : tStop>tstopMax
+Waiting : tStop is increased; d=0;
+Acc --> Moving : no wait
+Moving -> Waiting  : d>dMax
+Moving: tStop=0; d is increased
+
+
+@enduml
