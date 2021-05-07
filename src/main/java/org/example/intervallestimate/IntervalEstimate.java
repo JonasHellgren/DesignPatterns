@@ -1,4 +1,4 @@
-package org.example.streams_needed_classes;
+package org.example.intervallestimate;
 
 import java.util.ArrayList;
 import java.util.DoubleSummaryStatistics;
@@ -45,7 +45,7 @@ public class IntervalEstimate {
         Double variance=stats.getCount()==0?0:squaredDifferenceSum /stats.getCount();
         Double standardDeviation =Math.sqrt(variance);
 
-        logger.warning("m:"+stats.getAverage()+"std:"+standardDeviation+", nofStd:"+nofStd+", getCount:"+stats.getCount());
+        logger.finest("m:"+stats.getAverage()+"std:"+standardDeviation+", nofStd:"+nofStd+", getCount:"+stats.getCount());
 
         double temp=stats.getCount()==0?0:nofStd*standardDeviation;
         confIntervall.add(stats.getAverage()-temp );

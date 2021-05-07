@@ -1,7 +1,7 @@
 package org.example.streams;
 
 
-import org.example.streams_needed_classes.IntervalEstimate;
+import org.example.intervallestimate.IntervalEstimate;
 import org.junit.Before;
 import org.junit.Test;
 
