@@ -1,4 +1,4 @@
-package org.example.intervallestimate;
+package org.example.math;
 
 import java.util.ArrayList;
 import java.util.DoubleSummaryStatistics;

@@ -1,6 +1,6 @@
 package org.example.design_pattern_strategy.balance_measure_classes;
 
-import org.example.intervallestimate.IntervalEstimate;
+import org.example.math.IntervalEstimate;
 
 import java.util.List;
 import java.util.OptionalDouble;
