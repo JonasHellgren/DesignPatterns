@@ -63,12 +63,13 @@ public class GenericMethods {
     public <T extends Memory> double calcQlong (double SoB,T memory){
 
         QLongStrategy qLongStrategy;
-        if (memory instanceof MemoryEmpty )
+
+        if (memory instanceof MemoryEmpty )  //ersätta instanceof
              qLongStrategy=new QLongZero();
         else
              qLongStrategy=new QlongSoB();
 
-        return qLongStrategy.calculate(SoB,memory);
+        return qLongStrategy.calculate(SoB,memory);   //låta minnet beräkna istället??
     }
 
 

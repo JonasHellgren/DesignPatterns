@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Student {
+     String name;
+     int rollNo;
+}
+
+class StudentDaoInterface {
+     List<Student> getAllStudents();
+     Student getStudent(int rollNo);
+     void addStudent(Student student);
+     void updateStudent(Student student);
+     void deleteStudent(Student student);
+}
+
+class StudentDao {
+List<Student> students;
+}
+
+class StudentDaoRunnner {
+    main()
+}
+Student <-- StudentDaoInterface  :uses
+StudentDao <-u- StudentDaoRunnner  :uses
+StudentDaoInterface  <|-d- StudentDao  :implements
+@enduml

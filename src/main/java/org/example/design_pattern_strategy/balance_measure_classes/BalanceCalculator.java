@@ -12,7 +12,6 @@ public class BalanceCalculator {
 
     private final double BACKUP_VALUE=0d;
 
-
     public BalanceCalculator(BalanceMeasureStrategy balanceMeasureStrategy) {
         this.balanceMeasureStrategy = balanceMeasureStrategy;
     }

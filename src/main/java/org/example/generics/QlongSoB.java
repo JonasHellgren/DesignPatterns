@@ -10,6 +10,6 @@ public class QlongSoB implements QLongStrategy{
         }
 
         MemoryOnePar mem=(MemoryOnePar)memory;
-        return (SoB<mem.getPar1())?1d:0d;
+        return (SoB<mem.getPar1())?-1d:0d;
     }
 }

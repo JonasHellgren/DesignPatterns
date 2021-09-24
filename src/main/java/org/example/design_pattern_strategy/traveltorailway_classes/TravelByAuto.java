@@ -12,5 +12,4 @@ public class TravelByAuto implements TravelStrategy
         return 20d;
     }
 
-
 }
