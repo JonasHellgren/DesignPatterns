@@ -1,4 +1,4 @@
-package org.example.data_access_object_pattern;
+package org.example.data_access_object_pattern_tutorialspoint;
 
 /***
  * https://www.tutorialspoint.com/design_pattern/data_access_object_pattern.htm

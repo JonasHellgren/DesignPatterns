@@ -1,4 +1,4 @@
-package org.example.data_access_object_pattern;
+package org.example.data_access_object_pattern_tutorialspoint;
 
 public class Student {
     private String name;
