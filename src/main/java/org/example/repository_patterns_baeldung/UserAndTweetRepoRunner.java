@@ -21,12 +21,6 @@ public class UserAndTweetRepoRunner {
 
         System.out.println(userRepository.findUserAndPersonsTweets("Susan"));
 
-        /***
-         *         userStorage.save(new User("John", "john@domain.com"));
-         *         userStorage.save(new User("Susan", "susan@domain.com"));
-         *         userStorage.getAll().forEach(System.out::println);
-         */
-
 
     }
 }
