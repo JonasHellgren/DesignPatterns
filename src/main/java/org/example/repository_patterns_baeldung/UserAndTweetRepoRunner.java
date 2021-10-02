@@ -14,11 +14,8 @@ public class UserAndTweetRepoRunner {
         userRepository.addTweet(new TweetModel("john@domain.com", "Im stupid", "2021.10.21"));
 
         System.out.println(userRepository.get(0));
-
         System.out.println(userRepository.findTweetsFromUserWithEmail("john@domain.com"));
-
         System.out.println(userRepository.findUserAndPersonsTweets("John"));
-
         System.out.println(userRepository.findUserAndPersonsTweets("Susan"));
 
 

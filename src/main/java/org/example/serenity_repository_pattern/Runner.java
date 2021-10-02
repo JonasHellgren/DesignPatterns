@@ -2,6 +2,11 @@ package org.example.serenity_repository_pattern;
 
 import java.util.List;
 
+
+/***
+ * https://github.com/JAVA-MSDT/repository-design-pattern/blob/master/src/main/java/com/serenity/repository/runner/Runner.java
+ */
+
 public class Runner {
     public static void main(String[] args) {
 
